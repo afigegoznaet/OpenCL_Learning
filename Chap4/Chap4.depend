@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1512626167 source:c:\workspace\opencl-learning\chap4\double_test.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<OpenCL/cl.h>
+	<CL/cl.h>
+
+1525293189 source:c:\workspace\opencl-learning\chap4\vector_widths.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<OpenCL/cl.h>
+	<CL/cl.h>
+
+1319311744 source:c:\workspace\opencl-learning\chap4\float_config.c
+	<stdio.h>
+	<stdlib.h>
+	<OpenCL/cl.h>
+	<CL/cl.h>
+
+1525377506 source:c:\workspace\opencl-learning\chap4\hello_kernel.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<OpenCL/cl.h>
+	<CL/cl.h>
+

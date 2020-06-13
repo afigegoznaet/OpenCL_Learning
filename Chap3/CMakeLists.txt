@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.5)
+
+project(Chap3 LANGUAGES C)
+include_directories("C:/Intel/OpenCL/sdk/include")
+#link_directories("C:/Intel/OpenCL/sdk/lib/x64")
+link_directories("C:/Intel/NVIDIA GPU Computing SDK/OpenCL/common/lib/x64")
+#add_library(OpenCL STATIC IMPORTED)
+link_libraries(OpenCL.lib)
+configure_file(blank.cl ${CMAKE_CURRENT_BINARY_DIR}/blank.cl COPYONLY)
+configure_file(blank_mc.cl ${CMAKE_CURRENT_BINARY_DIR}/blank_mc.cl COPYONLY)
+#add_executable(Chap3 map_copy.c)
+#add_executable(Chap3 buffer_test.c)
+add_executable(Chap3 buffer_check.c)

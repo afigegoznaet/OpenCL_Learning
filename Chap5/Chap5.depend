@@ -1,0 +1,36 @@
+# depslib dependency file v1.0
+1319311744 source:c:\workspace\opencl-learning\chap5\id_check.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<OpenCL/cl.h>
+	<CL/cl.h>
+
+1319311744 source:c:\workspace\opencl-learning\chap5\mod_round.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<OpenCL/cl.h>
+	<CL/cl.h>
+
+1319311744 source:c:\workspace\opencl-learning\chap5\mad_test.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<OpenCL/cl.h>
+	<CL/cl.h>
+
+1319311744 source:c:\workspace\opencl-learning\chap5\shuffle_test.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<OpenCL/cl.h>
+	<CL/cl.h>
+
+1319311744 source:c:\workspace\opencl-learning\chap5\select_test.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<OpenCL/cl.h>
+	<CL/cl.h>
+

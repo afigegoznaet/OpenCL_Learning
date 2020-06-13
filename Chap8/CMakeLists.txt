@@ -1,0 +1,28 @@
+cmake_minimum_required(VERSION 3.5)
+
+project(Chap8 LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+include_directories("C:/Intel/OpenCL/sdk/include")
+link_directories("C:/Intel/OpenCL/sdk/lib/x64")
+#link_directories("C:/Intel/NVIDIA GPU Computing SDK/OpenCL/common/lib/x64")
+#add_library(OpenCL STATIC IMPORTED)
+link_libraries(OpenCL.lib)
+
+configure_file(blank.cl ${CMAKE_CURRENT_BINARY_DIR}/blank.cl COPYONLY)
+configure_file(callback.cl ${CMAKE_CURRENT_BINARY_DIR}/callback.cl COPYONLY)
+configure_file(kernels.cl ${CMAKE_CURRENT_BINARY_DIR}/kernels.cl COPYONLY)
+configure_file(map_copy.cl ${CMAKE_CURRENT_BINARY_DIR}/map_copy.cl COPYONLY)
+configure_file(profile.cl ${CMAKE_CURRENT_BINARY_DIR}/profile.cl COPYONLY)
+configure_file(sub_buffer.cl ${CMAKE_CURRENT_BINARY_DIR}/sub_buffer.cl COPYONLY)
+configure_file(user_event.cl ${CMAKE_CURRENT_BINARY_DIR}/user_event.cl COPYONLY)
+
+#add_executable(Chap8 buffer_test.cpp)
+#add_executable(Chap8 callback.cpp)
+add_executable(Chap8 create_kernels.cpp)
+#add_executable(Chap8 full_context.cpp)
+#add_executable(Chap8 map_copy.cpp)
+#add_executable(Chap8 profile.cpp)
+#add_executable(Chap8 sub_buffer.cpp)
+#add_executable(Chap8 user_event.cpp)

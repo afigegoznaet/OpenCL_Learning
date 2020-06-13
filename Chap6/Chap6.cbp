@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Chap6" />
+		<Option pch_mode="2" />
+		<Option compiler="microsoft_visual_c_2017" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Chap6" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="microsoft_visual_c_2017-64" />
+				<Option projectCompilerOptionsRelation="-1" />
+				<Option projectLinkerOptionsRelation="-1" />
+				<Option projectIncludeDirsRelation="-1" />
+				<Option projectLibDirsRelation="-1" />
+				<Linker>
+					<Add library="C:/Program Files/zlib/lib/zlibd.lib" />
+					<Add library="C:/Program Files/libpng/lib/libpng16d.lib" />
+				</Linker>
+				<MakeCommands>
+					<Build command="" />
+					<CompileFile command="" />
+					<Clean command="" />
+					<DistClean command="" />
+					<AskRebuildNeeded command="" />
+					<SilentBuild command=" &gt; $(CMD_NULL)" />
+				</MakeCommands>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Chap6" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="microsoft_visual_c_2017-64" />
+				<Compiler>
+					<Add option="/MD" />
+					<Add option="/Ox" />
+					<Add option="/DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="C:/Program Files/libpng/lib/libpng16_static.lib" />
+					<Add library="C:/Program Files/zlib/lib/zlib.lib" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="/W3" />
+		</Compiler>
+		<Unit filename="interp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="interp.cl" />
+		<Unit filename="simple_image.cl" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

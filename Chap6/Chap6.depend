@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1531339077 source:c:\workspace\opencl-learning\chap6\interp.c
+	<png.h>
+	<pngstruct.h>
+	<pnginfo.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<OpenCL/cl.h>
+	<CL/cl.h>
+
+1319311744 source:c:\workspace\opencl-learning\chap6\simple_image.c
+	<png.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<OpenCL/cl.h>
+	<CL/cl.h>
+

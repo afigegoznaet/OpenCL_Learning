@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1531859458 source:c:\workspace\opencl-learning\chap7\callback.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<OpenCL/cl.h>
+	<CL/cl.h>
+
+1531860164 source:c:\workspace\opencl-learning\chap7\user_event.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<unistd.h>
+	<OpenCL/cl.h>
+	<CL/cl.h>
+
+1319322348 source:c:\workspace\opencl-learning\chap7\profile_read.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<OpenCL/cl.h>
+	<CL/cl.h>
+
+1319311744 source:c:\workspace\opencl-learning\chap7\profile_items.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<OpenCL/cl.h>
+	<CL/cl.h>
+

@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1525124255 source:c:\workspace\opencl-learning\chap3\buffer_check.c
+	<stdio.h>
+	<stdlib.h>
+	<sys/types.h>
+	<OpenCL/cl.h>
+	<CL/cl.h>
+
+1446671344 source:c:\workspace\opencl-learning\chap3\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1525205331 source:c:\workspace\opencl-learning\chap3\buffer_test.c
+	<stdio.h>
+	<stdlib.h>
+	<sys/types.h>
+	<OpenCL/cl.h>
+	<CL/cl.h>
+
+1525206572 source:c:\workspace\opencl-learning\chap3\map_copy.c
+	<stdio.h>
+	<stdlib.h>
+	<sys/types.h>
+	<string.h>
+	<OpenCL/cl.h>
+	<CL/cl.h>
+

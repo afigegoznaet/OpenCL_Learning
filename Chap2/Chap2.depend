@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1531172269 source:c:\workspace\opencl-learning\chap2\device_ext_test.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<OpenCL/cl.h>
+	<CL/cl.h>
+
+1525292521 source:c:\workspace\opencl-learning\chap2\platform_ext_test.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<OpenCL/cl.h>
+	<CL/cl.h>
+
+1524858261 source:c:\workspace\opencl-learning\chap2\program_build.c
+	<stdio.h>
+	<stdlib.h>
+	<sys/types.h>
+	<OpenCL/cl.h>
+	<CL/cl.h>
+
+1524863737 source:c:\workspace\opencl-learning\chap2\kernel_search.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<sys/types.h>
+	<OpenCL/cl.h>
+	<CL/cl.h>
+
+1310950410 source:c:\workspace\opencl-learning\chap2\context_count.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<OpenCL/cl.h>
+	<CL/cl.h>
+

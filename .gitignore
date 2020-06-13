@@ -1,0 +1,5 @@
+*.user
+*.user.*
+ui_*.h
+*.autosave
+\.*

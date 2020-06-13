@@ -1,0 +1,12 @@
+cmake_minimum_required(VERSION 3.5)
+
+project(Chap1 LANGUAGES C)
+include_directories("C:/Intel/OpenCL/sdk/include")
+#link_directories("C:/Intel/OpenCL/sdk/lib/x64")
+link_directories("C:/Intel/NVIDIA GPU Computing SDK/OpenCL/common/lib/x64")
+#add_library(OpenCL STATIC IMPORTED)
+link_libraries(OpenCL.lib)
+#add_executable(Chap1 main.c)
+add_executable(Chap1 matvec.c)
+configure_file(matvec.cl ${CMAKE_CURRENT_BINARY_DIR}/matvec.cl COPYONLY)
+#add_executable(Chap1 platform_ext_test.c)

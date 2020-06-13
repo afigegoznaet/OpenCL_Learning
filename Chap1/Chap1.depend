@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1319311746 source:c:\workspace\opencl-learning\chap1\platform_ext_test.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<OpenCL/cl.h>
+	<CL/cl.h>
+
+1512165908 source:c:\workspace\opencl-learning\chap1\matvec.c
+	<stdio.h>
+	<stdlib.h>
+	<sys/types.h>
+	<OpenCL/cl.h>
+	<CL/cl.h>
+
