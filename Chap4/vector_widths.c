@@ -16,7 +16,7 @@ int main(void) {
    cl_uint vector_width;
    cl_int err;
 
-   	char name[256];
+
 	int valueSize;
 
    cl_uint num, i, devNum,j;
@@ -32,7 +32,7 @@ int main(void) {
 	for( i=0; i<num ; i++ )
 		{
 			printf("platform %d\n",i);
-		err = clGetDeviceIDs(platform[i], CL_DEVICE_TYPE_ALL, 2, devices, &devNum);
+		err = clGetDeviceIDs(platform[i], CL_DEVICE_TYPE_GPU, 2, devices, &devNum);
 		printf("Devices: %d\n", devNum);
 		if(err == CL_DEVICE_NOT_FOUND) {
 			printf("CPU\n");
@@ -46,7 +46,7 @@ int main(void) {
 		for(j=0;j<devNum;j++)
 		{
 			device = devices[j];
-
+				char name[256];
 				clGetDeviceInfo(devices[j], CL_DEVICE_NAME, valueSize, name, &valueSize);
 				printf("Device name: %s\n", name);
 				/* Obtain the device data */

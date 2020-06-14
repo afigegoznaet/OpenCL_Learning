@@ -5,17 +5,20 @@
 #include <iostream>
 #include <iterator>
 
+#define CL_HPP_MINIMUM_OPENCL_VERSION 100
+#define CL_HPP_TARGET_OPENCL_VERSION 110
+
 #ifdef MAC
 #include <OpenCL/cl.hpp>
 #else
-#include <CL/cl.hpp>
+#include <CL/cl2.hpp>
 #endif
 
 int main(void) {
 
 	std::vector<cl::Platform> platforms;
-	std::vector<cl::Device>	  devices;
-	std::vector<cl::Kernel>	  allKernels;
+	std::vector<cl::Device>   devices;
+	std::vector<cl::Kernel>   allKernels;
 	std::string				  kernelName;
 
 	try {
@@ -26,12 +29,10 @@ int main(void) {
 
 		// Create and build program
 		std::ifstream programFile("kernels.cl");
-		std::string	  programString(std::istreambuf_iterator<char>(programFile),
+		std::string   programString(std::istreambuf_iterator<char>(programFile),
 									(std::istreambuf_iterator<char>()));
-		cl::Program::Sources source(
-			1,
-			std::make_pair(programString.c_str(), programString.length() + 1));
-		cl::Program program(context, source);
+		cl::Program::Sources source(1, programString);
+		cl::Program			 program(context, source);
 		program.build(devices);
 
 		// Create individual kernels

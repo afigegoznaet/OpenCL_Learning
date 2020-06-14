@@ -15,13 +15,12 @@
 int main() {
 
    /* Host/device data structures */
-   cl_platform_id platform;
    cl_device_id device;
    cl_context context;
    cl_command_queue queue;
    cl_int i, j, err;
 
-   cl_platform_id platforms[5] = {0};
+   cl_platform_id platforms[10] = {0};
    char pl_info_text[256];
    cl_uint num_platforms;
    cl_platform_info inf;
@@ -51,7 +50,7 @@ int main() {
       correct[3] += mat[i+12] * vec[i];
    }
 
-   err = clGetPlatformIDs(5, NULL, &num_platforms);
+   err = clGetPlatformIDs(10, NULL, &num_platforms);
    clGetPlatformIDs(num_platforms, platforms, NULL);
    for(i = 0;i<num_platforms;i++){
 		for(j=0x0900;j<0x0905;j++){
@@ -62,15 +61,8 @@ int main() {
    }
 
 
-   /* Identify a platform */
-   err = clGetPlatformIDs(1, &platform, NULL);
-   if(err < 0) {
-      perror("Couldn't find any platforms");
-      exit(1);
-   }
-
    /* Access a device */
-   err = clGetDeviceIDs(platform, CL_DEVICE_TYPE_GPU, 1,
+   err = clGetDeviceIDs(platforms[0], CL_DEVICE_TYPE_GPU, 1,
          &device, NULL);
    if(err < 0) {
       perror("Couldn't find any devices");
@@ -86,7 +78,7 @@ int main() {
    }
 
    /* Read program file and place content into buffer */
-   program_handle = fopen(PROGRAM_FILE, "r");
+   program_handle = fopen(PROGRAM_FILE, "rb");
    if(program_handle == NULL) {
       perror("Couldn't find the program file");
       exit(1);
