@@ -10,5 +10,5 @@ link_libraries(OpenCL.lib)
 configure_file(rdft.cl ${CMAKE_CURRENT_BINARY_DIR}/rdft.cl COPYONLY)
 configure_file(fft.cl ${CMAKE_CURRENT_BINARY_DIR}/fft.cl COPYONLY)
 
-#add_executable(Chap14 rdft.c )
-add_executable(Chap14 fft.c  )
+add_executable(Chap14 rdft.c )
+#add_executable(Chap14 fft.c  )

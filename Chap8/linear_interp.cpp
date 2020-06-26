@@ -20,13 +20,13 @@ constexpr auto arrSize = 30000;
 void		   LinearInterpolateDD(const double *dfX1, const double *dfY1,
 								   const double *dfX2, const double *dfY2,
 								   const double *dfX, double *dfY) {
-	  *dfY = (*dfY1 * (*dfX2 - *dfX) + *dfY2 * (*dfX - *dfX1)) / (*dfX2 - *dfX1);
+	*dfY = (*dfY1 * (*dfX2 - *dfX) + *dfY2 * (*dfX - *dfX1)) / (*dfX2 - *dfX1);
 }
 
 
 int main(void) {
 	std::vector<cl::Platform> platforms;
-	std::vector<cl::Device>	  platformDevices, ctxDevices;
+	std::vector<cl::Device>   platformDevices, ctxDevices;
 	std::string				  device_name;
 
 	std::string			kernelName;
@@ -67,7 +67,7 @@ int main(void) {
 
 		// Create and build program
 		std::ifstream programFile("linear_interp.cl");
-		std::string	  programString(std::istreambuf_iterator<char>(programFile),
+		std::string   programString(std::istreambuf_iterator<char>(programFile),
 									(std::istreambuf_iterator<char>()));
 		cl::Program::Sources source(1, programString);
 		cl::Program			 program(context, source);
@@ -75,7 +75,7 @@ int main(void) {
 
 		// Create individual kernels
 		cl::Kernel linearKernel(program, "LinearInterpolateDD");
-		double	   X1 = 1, Y1 = 2, X2 = 3, Y2 = 4, X = 2;
+		double	 X1 = 1, Y1 = 2, X2 = 3, Y2 = 4, X = 2;
 		double *   output{}, *newX;
 		cl::Buffer bufX1(context, CL_MEM_READ_ONLY | CL_MEM_COPY_HOST_PTR,
 						 sizeof(double), &X1, NULL);
@@ -131,6 +131,7 @@ int main(void) {
 
 		cl::Kernel linearParallelKernel(program, "LinearInterpolateDDParallel");
 
+
 		cl::Buffer bufXs(context, CL_MEM_READ_ONLY | CL_MEM_COPY_HOST_PTR,
 						 sizeof(double) * Xs.size(), Xs.data(), NULL);
 		cl::Buffer bufYs(context, CL_MEM_READ_ONLY | CL_MEM_COPY_HOST_PTR,
@@ -144,25 +145,23 @@ int main(void) {
 		linearParallelKernel.setArg(1, bufYs);
 		linearParallelKernel.setArg(2, bufXpts);
 		linearParallelKernel.setArg(3, bufYpts);
-
-
 		start = s_clock::now();
-		// queue.enqueueTask(linearParallelKernel);
 		queue.enqueueNDRangeKernel(linearParallelKernel, cl::NullRange,
-								   cl::NDRange(Ypts.size()), cl::NDRange(2));
+								   cl::NDRange(Ypts.size()), cl::NDRange(8));
 		auto outData = (double *)queue.enqueueMapBuffer(
 			bufYpts, CL_TRUE, CL_MAP_READ, 0, sizeof(double) * Ypts.size());
+		end = s_clock::now();
 
 
 		// std::cout << "output: " << *output << '\n';
 		queue.enqueueUnmapMemObject(bufYpts, outData);
-		end = s_clock::now();
+
 		std::cout << "Parallel OpenCL run time: " << (end - start).count()
 				  << '\n';
 
-		for (int i = 0; i < arrSize / 10000; i++) {
-			std::cout << "output: " << outData[i] << '\n';
-		}
+		//		for (int i = 0; i < arrSize / 10000; i++) {
+		//			std::cout << "output: " << outData[i] << '\n';
+		//		}
 
 	} catch (cl::Error e) {
 		std::cout << e.what() << ": Error code " << e.err()
